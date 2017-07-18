@@ -369,11 +369,4 @@
     return HTTPClient;
 }
 
-// 默认接受任何请求认证,可以利用category重写这个方法,或者自定义子类
-- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
-    
-    NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-    completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
-}
-
 @end
